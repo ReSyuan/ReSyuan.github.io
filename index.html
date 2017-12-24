@@ -30,11 +30,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
 <div class="alert alert-primary" role="alert">
-  This is a primary alert—check it out!
+  慎入!!進了就回不去了!!!
 </div>
 
 <div class="alert alert-info" role="alert">
-  This is a info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+人生系列 <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
 </div>
 
 <button type="button" class="btn btn-primary">Primary</button>
@@ -93,6 +93,44 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2457388311152925',
+      cookie     : true,
+      xfbml      : true,
+      version    :'v2.11'
+    });
+
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+</script>
+
+<fb:login-button
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 
   </body>
 </html>
